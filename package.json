@@ -1,8 +1,8 @@
 {
   "name": "pixmultinotifica",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "Demonstração de recebimentos Pix e avisos por WhatsApp",
-  "scripts": { "start": "node server.mjs", "check": "node --check app.js && node --check server.mjs", "test": "node --test" },
+  "scripts": { "start": "node server.mjs", "check": "node --check app.js && node --check server.mjs && node --check db.mjs && node --check domain.mjs", "test": "node --test" },
   "engines": { "node": ">=20" }
 }
