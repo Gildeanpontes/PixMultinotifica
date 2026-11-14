@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#122b28"><title>PixMultiNotifica • Seu Pix, toda a equipe</title>
+  <link rel="stylesheet" href="/styles.css"><script type="module" src="/app.js"></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#inicio"><span class="brand-symbol">❖</span><span>pixmulti<span class="brand-light">notifica</span></span></a>
+    <div class="workspace"><span class="workspace-icon">M</span><div><strong id="sidebar-business">Minha empresa</strong><small>Espaço de demonstração</small></div><span class="chevron">⌄</span></div>
+    <p class="nav-label">PRINCIPAL</p>
+    <nav aria-label="Navegação principal">
+      <a href="#inicio" data-page="inicio" class="active"><span>◫</span>Visão geral</a>
+      <a href="#recebimentos" data-page="recebimentos"><span>↙</span>Recebimentos <span class="nav-count" id="payment-count">0</span></a>
+      <a href="#equipe" data-page="equipe"><span>♧</span>Minha equipe</a>
+      <a href="#avisos" data-page="avisos"><span>♧</span>Avisos WhatsApp</a>
+      <a href="#configuracoes" data-page="configuracoes"><span>⚙</span>Configurações</a>
+    </nav>
+    <div class="sidebar-bottom"><div class="connection-dot"></div><div><strong>Modo demonstração</strong><small>Integrações não conectadas</small></div></div>
+    <div class="profile"><span class="avatar">VC</span><div><strong>Seu negócio</strong><small>Administrador</small></div></div>
+  </aside>
+  <div class="main-shell">
+    <header class="topbar"><span>Seu negócio <span class="breadcrumb">/</span> <strong id="breadcrumb">Visão geral</strong></span><span class="topbar-right"><span class="demo-pill">DEMO</span><span class="avatar small">VC</span></span></header>
+    <main>
+      <div class="page-heading"><div><p class="eyebrow">MENOS COMPROVANTES. MAIS TRANQUILIDADE.</p><h1 id="page-title">Tudo certo com o seu Pix.</h1><p id="page-description">Acompanhe os recebimentos e mantenha toda a equipe informada.</p></div><button class="button primary" id="simulate">＋ Simular recebimento</button></div>
+      <div class="demo-banner"><span>ⓘ</span><p><strong>Você está em uma demonstração.</strong> Os recebimentos são fictícios. Nenhum aviso é enviado automaticamente.</p><a href="#configuracoes">Ver integrações ↗</a></div>
+      <section id="page-inicio" class="page">
+        <div class="stats"><article class="stat"><div class="stat-top">Recebido hoje <span class="stat-icon">↙</span></div><strong id="total-today">R$ 0,00</strong><small><span class="green-dot"></span> Valores de demonstração</small></article><article class="stat"><div class="stat-top">Recebimentos hoje <span class="stat-icon blue">⇄</span></div><strong id="count-today">0</strong><small>Todos os pagamentos em um só lugar</small></article><article class="stat"><div class="stat-top">Pessoas na equipe <span class="stat-icon purple">♧</span></div><strong id="team-total">0</strong><small id="team-active">0 pessoas com avisos ativados</small></article><article class="stat"><div class="stat-top">Mensagens preparadas <span class="stat-icon amber">↗</span></div><strong id="notice-total">0</strong><small>Envio manual pelo WhatsApp</small></article></div>
+        <div class="dashboard-grid"><section class="card"><div class="card-heading"><div><h2>Últimos recebimentos</h2><p>Entrou um Pix? A informação chega à equipe.</p></div><a href="#recebimentos">Ver todos ↗</a></div><div id="recent-payments"></div><div class="card-foot"><span class="green-dot"></span> Histórico de exemplo salvo neste navegador</div></section>
+          <section class="card team-card"><div class="card-heading"><div><h2>Quem fica sabendo</h2><p>As pessoas certas, no mesmo aviso.</p></div><span class="icon-box">♧</span></div><div id="team-preview"></div><button class="button secondary full" id="add-member-home">＋ Adicionar pessoa</button><div class="team-note">♡ &nbsp; Cada pessoa recebe o valor, o nome do pagador e o horário.</div></section></div>
+        <section class="how-banner"><div class="how-mark">❖</div><div><span class="eyebrow">UM PIX. TODA A EQUIPE INFORMADA.</span><h2>O comprovante não precisa virar uma conversa.</h2><p>Cadastre dono, gerente e caixa. Centralize os recebimentos e prepare os avisos de WhatsApp.</p></div><a class="button secondary" href="#avisos">Conhecer os avisos ↗</a></section>
+      </section>
+      <section id="page-recebimentos" class="page" hidden><section class="card"><div class="card-heading"><div><h2>Histórico de recebimentos</h2><p>Pagamentos fictícios para testar o seu fluxo.</p></div><input type="search" id="search" placeholder="Buscar pagador ou referência" aria-label="Buscar recebimentos"></div><div id="all-payments"></div></section></section>
+      <section id="page-equipe" class="page" hidden><section class="card"><div class="card-heading"><div><h2>Pessoas cadastradas</h2><p>Defina quem deve receber os avisos pelo WhatsApp.</p></div><button class="button primary" id="add-member">＋ Adicionar pessoa</button></div><div id="team-list"></div></section></section>
+      <section id="page-avisos" class="page" hidden><section class="card"><div class="card-heading"><div><h2>Avisos preparados</h2><p>Revise a mensagem e abra o WhatsApp para enviar manualmente. A abertura não confirma entrega.</p></div></div><div id="notices"></div></section></section>
+      <section id="page-configuracoes" class="page" hidden><div class="settings-grid"><section class="card settings-card"><h2>Seu negócio</h2><p>Este nome aparece nas mensagens preparadas.</p><form id="business-form"><label>Nome da empresa<input id="business-name" required maxlength="70"></label><button class="button primary" type="submit">Salvar nome</button></form></section><section class="card settings-card"><h2>Integrações</h2><div class="integration"><span>Banco / provedor Pix</span><span class="status neutral">Não conectado</span></div><div class="integration"><span>WhatsApp Business API</span><span class="status neutral">Não conectado</span></div><p>A confirmação real precisa de um webhook autenticado do banco. O envio automático precisa da API do WhatsApp Business e das autorizações dos destinatários.</p><p>Esta versão funciona localmente, sem conectar contas bancárias ou enviar dados a um servidor.</p></section></div></section>
+      <footer><span>❖ pixmultinotifica</span><span>Seu Pix, toda a equipe.</span></footer>
+    </main>
+  </div>
+  <dialog id="member-dialog"><form id="member-form"><div class="modal-heading"><h2>Adicionar pessoa</h2><button class="close" type="button" data-close aria-label="Fechar">×</button></div><p>Cadastre quem vai acompanhar os recebimentos.</p><label>Nome<input name="name" required maxlength="60" placeholder="Ex.: Ana Silva"></label><label>Função<select name="role"><option>Dono(a)</option><option>Gerente</option><option>Caixa</option><option>Outro</option></select></label><label>WhatsApp com DDD<input name="phone" type="tel" required maxlength="22" placeholder="(63) 99999-1234"></label><p class="form-error" id="member-error" role="alert"></p><button class="button primary full" type="submit">Cadastrar pessoa</button></form></dialog>
+  <dialog id="payment-dialog"><form id="payment-form"><div class="modal-heading"><h2>Simular recebimento</h2><button class="close" type="button" data-close aria-label="Fechar">×</button></div><p>Crie um Pix fictício e prepare avisos para a equipe com WhatsApp cadastrado.</p><label>Nome do pagador<input name="payer" required maxlength="80" placeholder="Ex.: João Oliveira"></label><label>Valor (R$)<input name="amount" type="number" min="0.01" max="1000000" step="0.01" required placeholder="0,00"></label><p class="form-error" id="payment-error" role="alert"></p><button class="button primary full" type="submit">Simular Pix e preparar avisos</button></form></dialog>
+  <div id="toast" role="status" hidden></div>
+</body>
+</html>
